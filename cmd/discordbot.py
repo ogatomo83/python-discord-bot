@@ -1,7 +1,10 @@
 import discord
 import discordmysql
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-TOKEN = "MTA5NTM1MDA0ODkzOTg1NTkyMg.G226PU.PPU4nEilHin4S6QL36oxpF1r1hCx5Tkbya_-Sg"
+TOKEN = os.getenv('TOKEN')
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)

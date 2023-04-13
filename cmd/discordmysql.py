@@ -9,18 +9,18 @@ try:
 		passwd='P@ssw0rd',
 		db='discord')
 	cursor = connection.cursor()
-	# sql = '''
-	# 	CREATE TABLE students (
-	# 		student_id VARCHAR(255) NOT NULL PRIMARY KEY,
-	# 		name VARCHAR(255) NOT NULL,
-	# 		joine_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	# 		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	# 		updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-	# 	)'''
+	sql = '''
+		CREATE TABLE IF NOT EXISTS students (
+			student_id VARCHAR(255) NOT NULL PRIMARY KEY,
+			name VARCHAR(255) NOT NULL,
+			joine_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+		)'''
 	# sql = '''
 	# 	DROP TABLE students;
 	# )'''
-	# cursor.execute(sql)
+	cursor.execute(sql)
 
 	cursor.execute("show columns from students;")
 	print(cursor.fetchall())
